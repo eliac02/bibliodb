@@ -8,7 +8,7 @@ if (!isset($_SESSION['email'])) {
 }
 
 ?>
-<?php include 'header.php'; ?>
+<?php include 'header_user.php'; ?>
 
 <div class="container-fluid">
   <div class="row">
@@ -53,10 +53,6 @@ if (!isset($_SESSION['email'])) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
-          <label for="old_password" class="form-label">Vecchia password</label>
-          <input type="password" class="form-control" id="old_password" name="old_password" required>
-        </div>
         <div class="mb-3">
           <label for="new_password" class="form-label">Nuova password</label>
           <input type="password" class="form-control" id="new_password" name="new_password" required>

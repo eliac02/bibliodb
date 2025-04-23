@@ -214,5 +214,5 @@
     </script>
     <?php endif; ?>
   </body>
-<?php include 'footer.php'; ?>
+  <?php include 'footer.php'; ?>
 </html>
