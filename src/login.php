@@ -31,14 +31,21 @@ if (pg_num_rows($result) === 1) {
 
     // Salva i dati dell'utente in sessione
     $_SESSION['email'] = $user['email'];
-    $_SESSION['tipo'] = $user['tipo'];
     $_SESSION['nome'] = $user['nome'];
+    $_SESSION['codice_fiscale'] = $user['codice_fiscale'];
 
-    // Reindirizza alla pagina del profilo (unica per ora)
-    header("Location: bibliotecario.php");
+    $cf = $user['codice_fiscale'];
+
+    // Verifica se è un lettore
+    $res_lettore = pg_query($conn, "SELECT 1 FROM lettore WHERE codice_fiscale = '$cf'");
+    if (pg_fetch_row($res_lettore)) {
+        header("Location: lettore.php");
+    } else {
+        header("Location: bibliotecario.php");
+    }
+
     exit();
 } else {
     echo "Credenziali errate. <a href='index.php'>Torna indietro</a>";
 }
 ?>
-

@@ -10,5 +10,11 @@ TARGET_DIR="/srv/http/biblio/src/"
 echo "Copia dei file da Progetto a Server..."
 sudo cp -r "$SOURCE_DIR"/* "$TARGET_DIR"
 
+SOURCE_DIR="$HOME/uni/basi/progetto/assets/images/web"
+TARGET_DIR="/srv/http/biblio/images/"
+
+echo "Copia delle immagini da Progetto a Server..."
+sudo cp -r "$SOURCE_DIR"/* "$TARGET_DIR"
+
 echo "Deploy completato con successo!"
 

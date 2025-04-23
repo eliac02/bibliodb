@@ -22,7 +22,7 @@ if (!isset($_SESSION['email'])) {
     <div class="container mt-5">
         <div class="card shadow-sm">
             <div class="card-body">
-                <h2 class="card-title">Benvenuto nella tua admin console!</h1>
+                <h1 class="card-title">Benvenuto nel tuo profilo lettore!</h1>
                 <p>Hai effettuato l'accesso con l'email: <strong><?php echo htmlspecialchars($_SESSION['email']); ?></strong></p>
                 <p class="card-text">Qui potrai gestire le tue attività nella biblioteca.</p>
                 <a href="index.php" class="btn btn-primary">Torna alla Home</a>
