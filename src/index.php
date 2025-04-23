@@ -47,7 +47,6 @@
         </div>
       </div>
     </nav>
-
     <!-- contenuto principale -->
     <div class="container text-center">
       <h1 class="mt-5">Benvenuto nel sistema di biblioteche Open Source</h1>
@@ -215,11 +214,5 @@
     </script>
     <?php endif; ?>
   </body>
-  <footer class="bg-light text-center text-lg-start mt-5 fixed-bottom">
-    <div class="text-center p-3" style="background-color: #f8f9fa">
-      © 2025 Sistema Bibliotecario OpenBiblio ·
-      <a class="text-dark" href="#">Privacy</a> ·
-      <a class="text-dark" href="#">Contatti</a>
-    </div>
-  </footer>
+<?php include 'footer.php'; ?>
 </html>

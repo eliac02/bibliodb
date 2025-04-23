@@ -1,7 +1,3 @@
-<?php
-// grazie.php
-?>
-
 <!doctype html>
 <html lang="it">
   <head>
@@ -14,23 +10,24 @@
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <canvas
-      id="confetti-canvas"
-      style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-      "
-    ></canvas>
 
+    <!-- navbar -->
     <nav
-      class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark px-3"
+      class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark fixed-top"
     >
-      <a class="navbar-brand" href="index.php">OpenBiblio</a>
-    </nav>
+      <div class="container-fluid">
+        <!-- logo -->
+        <a class="navbar-brand" href="index.php">
+          <img
+            src="../images/logo.png"
+            alt="Logo"
+            width="40"
+            height="40"
+            class="d-inline-block align-text-top rounded-circle"
+          />
+        </a>
+        <span class="navbar-text mx-auto fw-bold">OpenBiblio</span>
+                </nav>
 
     <main class="flex-grow-1 d-flex justify-content-center align-items-center">
       <div class="text-center">
@@ -59,8 +56,6 @@
       });
     </script>
 
-    <footer class="bg-dark text-white text-center py-3 mt-auto">
-      &copy; <?php echo date("Y"); ?> OpenBiblio. Tutti i diritti riservati.
-    </footer>
+<?php include "footer.php"; ?>
   </body>
 </html>

@@ -9,15 +9,7 @@ if (!isset($_SESSION['email'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <title>Profilo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-dark">
-
+<?php include 'header.php'; ?>
 
     <div class="container mt-5">
         <div class="card shadow-sm">
@@ -29,6 +21,6 @@ if (!isset($_SESSION['email'])) {
             </div>
         </div>
     </div>
-
+<?php include 'footer.php'; ?>
 </body>
 </html>

@@ -32,7 +32,9 @@ if (pg_num_rows($result) === 1) {
     // Salva i dati dell'utente in sessione
     $_SESSION['email'] = $user['email'];
     $_SESSION['nome'] = $user['nome'];
+    $_SESSION['cognome'] = $user['cognome'];
     $_SESSION['codice_fiscale'] = $user['codice_fiscale'];
+    $_SESSION['data_nascita'] = $user['data_nascita'];
 
     $cf = $user['codice_fiscale'];
 
