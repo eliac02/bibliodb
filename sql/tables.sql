@@ -20,7 +20,8 @@ CREATE TABLE utente (
     data_nascita DATE NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    CHECK (data_nascita <= CURRENT_DATE)
+    data_registrazione DATE NOT NULL,
+    CHECK (data_nascita <= CURRENT_DATE AND data_registrazione <= CURRENT_DATE)
 );
 -- per creare la tabella utente
 
@@ -49,7 +50,7 @@ CREATE TABLE libro (
     lingua VARCHAR(3) NOT NULL,
     trama TEXT,
     casa_editrice VARCHAR(100) NOT NULL,
-    pegi INTEGER NOT NULL,
+    classificazione INTEGER NOT NULL,
     CHECK (pegi BETWEEN 0 AND 18)
 );
 -- per creare la tabella libro
@@ -58,6 +59,7 @@ CREATE TABLE autore (
         id_autore SERIAL PRIMARY KEY,
         nome VARCHAR(100) NOT NULL,
         cognome VARCHAR(100) NOT NULL,
+        paese VARCHAR(3) NOT NULL,
         data_nascita DATE NOT NULL,
         data_morte DATE,
         biografia TEXT,
