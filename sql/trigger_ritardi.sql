@@ -11,7 +11,7 @@ BEGIN
     WHERE codice_fiscale = NEW.codice_fiscale;
 
     IF num_ritardi >= 5 THEN
-        RAISE EXCEPTION 'Prestito negato: il lettore ha troppi ritardi (%).', num_ritardi;
+        RAISE EXCEPTION 'Prestito negato: il lettore ha troppi ritardi ';
     END IF;
 
     RETURN NEW;

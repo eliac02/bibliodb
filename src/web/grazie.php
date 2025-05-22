@@ -11,23 +11,7 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
 
-    <!-- navbar -->
-    <nav
-      class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark fixed-top"
-    >
-      <div class="container-fluid">
-        <!-- logo -->
-        <a class="navbar-brand" href="index.php">
-          <img
-            src="../images/logo.png"
-            alt="Logo"
-            width="40"
-            height="40"
-            class="d-inline-block align-text-top rounded-circle"
-          />
-        </a>
-        <span class="navbar-text mx-auto fw-bold">OpenBiblio</span>
-                </nav>
+    <?php include "navbar.php"; ?> 
 
     <main class="flex-grow-1 d-flex justify-content-center align-items-center">
       <div class="text-center">
@@ -40,6 +24,7 @@
       </div>
     </main>
     <script>
+        // effetto visivo di coriandoli
       const jsConfetti = new JSConfetti({
         canvas: document.getElementById("confetti-canvas"),
       });

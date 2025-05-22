@@ -4,8 +4,9 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Verifica che l'utente sia loggato
-if (!isset($_SESSION['codice_fiscale'])) {
-    die("Accesso non autorizzato.");
+if (!isset($_SESSION['email'])) {
+    header("Location: index.php");
+    exit();
 }
 
 $cf = $_SESSION['codice_fiscale'];
@@ -37,7 +38,7 @@ $result = pg_execute($conn, "update_pwd", array($new_password, $cf));
 if ($result) {
     echo "<div style='text-align:center; margin-top: 2rem;'>
             <h2>Password modificata con successo!</h2>
-            <a href='lettore.php' class='btn btn-primary mt-3'>Torna al profilo</a>
+            <a href='index.php' class='btn btn-primary mt-3'>Accedi di nuovo</a>
           </div>";
 } else {
     echo "Errore durante l'aggiornamento della password.";

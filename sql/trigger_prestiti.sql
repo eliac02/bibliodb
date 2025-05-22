@@ -29,8 +29,8 @@ BEGIN
       AND p.data_scadenza >= CURRENT_DATE;
 
     -- se limite superato blocca inserimento
-    IF prestiti_attivi = max_prestiti THEN
-        RAISE EXCEPTION 'Prestiti attivi massimi raggiunti (% su %)', prestiti_attivi, max_prestiti;
+    IF prestiti_attivi >= max_prestiti THEN
+        RAISE EXCEPTION 'Prestiti attivi massimi raggiunti';
     END IF;
 
     RETURN NEW;

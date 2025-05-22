@@ -12,7 +12,7 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- navbar -->
+    <!-- barra di navigazione -->
     <nav
       class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark fixed-top"
     >
@@ -27,6 +27,7 @@
             class="d-inline-block align-text-top rounded-circle"
           />
         </a>
+        <!-- titolo -->
         <span class="navbar-text mx-auto fw-bold">OpenBiblio</span>
         <!-- pulsanti -->
         <div class="d-flex">
@@ -56,7 +57,7 @@
       </p>
     </div>
 
-    <!-- modale login -->
+    <!-- modale accesso -->
     <div
       class="modal fade"
       id="loginModal"
@@ -107,7 +108,7 @@
       </div>
     </div>
 
-    <!-- modal register -->
+    <!-- modale registrazione -->
     <div
       class="modal fade"
       id="registerModal"

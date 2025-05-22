@@ -1,0 +1,2 @@
+INSERT INTO bibliotecario VALUES
+("CRTLEI02T09I628Q", "2020-12-09", 1),

@@ -1,4 +1,4 @@
-INSERT INTO autore (nome, cognome, nazione, data_nascita, data_morte, biografia) VALUES
+INSERT INTO autore (nome, cognome, paese, data_nascita, data_morte, biografia) VALUES
 ("Hernest Miller", "Hemingway", "USA", "1899-07-21", "1961-07-02", "Scrittore e giornalista statunitense, nacque nel 1899 e fu una delle figure centrali della 'Generazione perduta'. Vinse il Premio Nobel per la Letteratura nel 1954. È celebre per uno stile asciutto e diretto, evidente in opere come 'Il vecchio e il mare' e 'Addio alle armi'"),
 ("Gabriel Garcia", "Marquez", "COL", "1927-03-06", "2014-04-17", "Nato nel 1927 in Colombia, è uno dei principali esponenti del realismo magico. Il suo capolavoro 'Cent'anni di solitudine' ha influenzato generazioni di scrittori. Vinse il Nobel per la Letteratura nel 1982"),
 ("Fyodor Michailovich", "Dostoevsky", "RUS", "1821-11-11", "1881-02-09", "Filosofo e romanziere russo dell’Ottocento, esplorò la psicologia umana in opere come 'Delitto e castigo' e 'I fratelli Karamazov'. Le sue opere affrontano temi di colpa, fede e redenzione"),

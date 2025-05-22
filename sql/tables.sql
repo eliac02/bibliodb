@@ -28,7 +28,7 @@ CREATE TABLE utente (
 CREATE TABLE lettore (
     codice_fiscale VARCHAR(16) PRIMARY KEY,
     ritardi INTEGER,
-    categoria VARCHAR(10) NOT NULL,
+    categoria VARCHAR(10) NOT NULL DEFAULT 'base',
     FOREIGN KEY (codice_fiscale) REFERENCES utente(codice_fiscale) ON DELETE CASCADE,
     CHECK (categoria IN ('base', 'premium'))
 );
@@ -51,7 +51,8 @@ CREATE TABLE libro (
     trama TEXT,
     casa_editrice VARCHAR(100) NOT NULL,
     classificazione INTEGER NOT NULL,
-    CHECK (pegi BETWEEN 0 AND 18)
+    pagine INTEGER NOT NULL,
+    CHECK (classificazione BETWEEN 0 AND 18)
 );
 -- per creare la tabella libro
 
@@ -68,6 +69,15 @@ CREATE TABLE autore (
 );
 -- per creare tabella autore
 
+CREATE TABLE libroautore (
+    isbn VARCHAR(13),
+    id_autore INTEGER,
+    PRIMARY KEY (isbn, id_autore),
+    FOREIGN KEY (isbn) REFERENCES libro(isbn) ON DELETE CASCADE,
+    FOREIGN KEY (id_autore) REFERENCES autore(id_autore) ON DELETE CASCADE
+);
+-- per creare la tabella libro_autore
+
 CREATE TABLE copia (
     id_copia SERIAL PRIMARY KEY,
     disponibile BOOLEAN DEFAULT TRUE,
@@ -77,15 +87,6 @@ CREATE TABLE copia (
     FOREIGN KEY (id_biblioteca) REFERENCES biblioteca(id_biblioteca)
 );
 -- per creare tabella copia
-
-CREATE TABLE libroautore (
-    isbn VARCHAR(13),
-    id_autore INTEGER,
-    PRIMARY KEY (isbn, id_autore),
-    FOREIGN KEY (isbn) REFERENCES libro(isbn) ON DELETE CASCADE,
-    FOREIGN KEY (id_autore) REFERENCES autore(id_autore) ON DELETE CASCADE
-);
--- per creare la tabella libro_autore
 
 CREATE TABLE prestito (
     id_prestito SERIAL PRIMARY KEY,

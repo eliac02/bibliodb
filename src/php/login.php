@@ -1,6 +1,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('session.gc_maxlifetime', 3600); // durata sessione 1 ora
+
 session_start();
 
 // Connessione al database
@@ -35,6 +37,7 @@ if (pg_num_rows($result) === 1) {
     $_SESSION['cognome'] = $user['cognome'];
     $_SESSION['codice_fiscale'] = $user['codice_fiscale'];
     $_SESSION['data_nascita'] = $user['data_nascita'];
+    $_SESSION['data_registrazione'] = $user['data_registrazione'];
 
     $cf = $user['codice_fiscale'];
 

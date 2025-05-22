@@ -15,6 +15,7 @@ $cognome = $_POST['cognome'] ?? '';
 $data_nascita = $_POST['data_nascita'] ?? '';
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
+$data_registrazione = date("Y-m-d");
 
 // Verifica che tutti i campi siano pieni
 if (empty($codice_fiscale) || empty($email) || empty($password) || empty($nome) || empty($cognome) || empty($data_nascita)) {
@@ -22,14 +23,18 @@ if (empty($codice_fiscale) || empty($email) || empty($password) || empty($nome) 
 }
 
 // Query di inserimento con l'ordine corretto
-pg_prepare($conn, "insert_utente", "
-    INSERT INTO utente VALUES ($1, $2, $3, $4, $5, $6)
-");
+pg_prepare(
+    $conn, "insert_utente", "
+    INSERT INTO utente VALUES ($1, $2, $3, $4, $5, $6, $7)
+"
+);
 
 // Esegui l'inserimento
-$result1 = pg_execute($conn, "insert_utente", array(
-    $codice_fiscale, $nome, $cognome, $data_nascita, $email, $password
-));
+$result1 = pg_execute(
+    $conn, "insert_utente", array(
+    $codice_fiscale, $nome, $cognome, $data_nascita, $email, $password, $data_registrazione
+    )
+);
 
 if (!$result1) {
     die("Errore nell'inserimento in utente: " . pg_last_error($conn));
@@ -47,4 +52,3 @@ if (!$result2) {
 header("Location: grazie.php");
 exit();
 ?>
-
